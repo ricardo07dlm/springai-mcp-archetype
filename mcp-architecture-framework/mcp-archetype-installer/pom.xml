@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>io.github.ricardodlm.springai.mcp</groupId>
+        <artifactId>mcp-architecture-framework</artifactId>
+        <version>${revision}</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>mcp-archetype-installer</artifactId>
+    <version>${mcp-archetype-installer.version}</version>
+    <packaging>jar</packaging>
+    <name>MCP ARGO Archetype Installer</name>
+    <description>
+        Instalador CLI "mvn archetype:generate" para mcp-server-archetype
+        con parámetros simplificados: artifactId, dominio, transport, appVersion.
+    </description>
+
+    <properties>
+        <maven.compiler.source>25</maven.compiler.source>
+        <maven.compiler.target>25</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <mcp.archetype.version>1.0.0</mcp.archetype.version>
+    </properties>
+
+
+
+    <!-- NUEVO: fuerza que Maven construya mcp-server-archetype ANTES que
+         este modulo dentro del mismo reactor (para que su jar/pom existan
+         en target/ cuando este pom intente copiarlos) -->
+    <dependencies>
+        <dependency>
+            <groupId>io.github.ricardodlm.springai.mcp</groupId>
+            <artifactId>mcp-server-archetype</artifactId>
+            <version>${mcp.archetype.version}</version>
+            <type>jar</type>
+            <scope>provided</scope>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}-${project.version}</finalName>
+
+        <!-- Filtra archetype.properties para sustituir @mcp.archetype.version@
+             (delimitador @...@ heredado de spring-boot-starter-parent, no ${...}) -->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>archetype.properties</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+                <excludes>
+                    <exclude>archetype.properties</exclude>
+                </excludes>
+            </resource>
+        </resources>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.4.1</version>
+                <configuration>
+                    <archive>
+                        <!-- Necesario para que MvnArchetype.getClass().getPackage()
+                             .getImplementationVersion() devuelva el ${project.version} -->
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <mainClass>io.github.ricardodlm.springai.mcp.develop.archetype.MvnArchetype</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>

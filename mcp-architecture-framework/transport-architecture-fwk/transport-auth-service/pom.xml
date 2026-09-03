@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>io.github.ricardodlm.springai.mcp.transport</groupId>
+        <artifactId>transport-architecture-fwk</artifactId>
+        <version>${revision}</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>transport-auth-service</artifactId>
+    <version>${transport-auth-service.version}</version>
+    <packaging>jar</packaging>
+    <name>Transport Auth Service</name>
+    <description>
+        Módulo de autenticación HTTP para transportes MCP.
+        Responsabilidades:
+        - McpAuthenticationFilter: extrae Bearer token y puebla SecurityContextHolder
+        - McpAuthenticationToken: token de Spring Security con Jwt como principal
+        - TokenExtractor: convierte JwtClaims → Jwt del modelo propio
+        - AuthAdapterAutoConfig: SecurityFilterChain + beans de Spring Security
+        - AuthAdapterProperties: configuración keycloak.adapter.*
+        - McpAuthorizationAdvisor: AOP de autorización por rol/scope
+        Depende de adapter-auth-idp para la validación JWT pura.
+
+    </description>
+
+    <dependencies>
+
+        <!-- ================================================ -->
+        <!-- adapter-auth-idp — validación JWT pura           -->
+        <!-- Trae transitivamente: nimbus-jose-jwt,           -->
+        <!-- spring-security-core, spring-web (provided)     -->
+        <!-- ================================================ -->
+        <dependency>
+            <groupId>io.github.ricardodlm.springai.mcp.adapters</groupId>
+            <artifactId>adapter-auth-idp</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.ricardodlm.springai.mcp.common</groupId>
+            <artifactId>common-jwt</artifactId>
+        </dependency>
+
+        <!-- ================================================ -->
+        <!-- Spring Security — filtros, SecurityFilterChain   -->
+        <!-- ================================================ -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <!-- ================================================ -->
+        <!-- SPRING WEB — OncePerRequestFilter                -->
+        <!-- ================================================ -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- ================================================ -->
+        <!-- AOP — McpAuthorizationAdvisor                    -->
+        <!-- ================================================ -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aspectj</artifactId>
+        </dependency>
+
+        <!-- ================================================ -->
+        <!-- Observabilidad — Logging Auth                    -->
+        <!-- ================================================ -->
+        <dependency>
+            <groupId>io.github.ricardodlm.springai.mcp.observability</groupId>
+            <artifactId>observability-logging</artifactId>
+        </dependency>
+
+
+        <!-- ================================================ -->
+        <!-- AUTOCONFIGURATION                                -->
+        <!-- ================================================ -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- ================================================ -->
+        <!-- ACTUATOR — métricas autenticación                -->
+        <!-- ================================================ -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <!-- ================================================ -->
+        <!-- LOMBOK                                           -->
+        <!-- ================================================ -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <!-- ================================================ -->
+        <!-- TEST                                             -->
+        <!-- ================================================ -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+
+
+    </dependencies>
+
+
+</project>

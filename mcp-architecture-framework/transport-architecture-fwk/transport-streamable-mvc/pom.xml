@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>io.github.ricardodlm.springai.mcp.transport</groupId>
+        <artifactId>transport-architecture-fwk</artifactId>
+        <version>${revision}</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>transport-streamable-mvc</artifactId>
+    <version>${transport-streamable-mvc.version}</version>
+    <packaging>jar</packaging>
+    <name>Transport Streamable MVC</name>
+    <description>
+        Librería de transporte Streamable para servidores MCP.
+        Gestiona el ciclo de vida de sesiones y el protocolo streamable HTTP.
+        Agnóstico de autenticación — delega en transport-auth-service via SecurityContextHolder.
+    </description>
+
+    <dependencies>
+
+        <!-- ================================================ -->
+        <!-- SESSION SERVICE — gestión ciclo de vida sesión   -->
+        <!-- ================================================ -->
+        <dependency>
+            <groupId>io.github.ricardodlm.springai.mcp.transport</groupId>
+            <artifactId>transport-session-service</artifactId>
+        </dependency>
+
+        <!-- ================================================ -->
+        <!-- SPRING WEB — MVC + SSE + SseEmitter             -->
+        <!-- ================================================ -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- ================================================ -->
+        <!-- AUTH SERVICE — ClientIdExtractor, McpAuthToken   -->
+        <!-- Trae transitivamente: adapter-auth-idp,          -->
+        <!-- spring-security-core, Jwt model                  -->
+        <!-- ================================================ -->
+        <dependency>
+            <groupId>io.github.ricardodlm.springai.mcp.transport</groupId>
+            <artifactId>transport-auth-service</artifactId>
+        </dependency>
+
+        <!-- ================================================ -->
+        <!-- Observabilidad — Logging Auth                    -->
+        <!-- ================================================ -->
+        <dependency>
+            <groupId>io.github.ricardodlm.springai.mcp.observability</groupId>
+            <artifactId>observability-logging</artifactId>
+        </dependency>
+
+
+        <!-- ================================================ -->
+        <!-- ACTUATOR — métricas conexiones SSE               -->
+        <!-- ================================================ -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <!-- ================================================ -->
+        <!-- AUTOCONFIGURATION                                -->
+        <!-- ================================================ -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- ================================================ -->
+        <!-- LOMBOK                                           -->
+        <!-- ================================================ -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <!-- ================================================ -->
+        <!-- TEST                                             -->
+        <!-- ================================================ -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+
+        <!-- ====================================== -->
+        <!-- Commons                              -->
+        <!-- ====================================== -->
+
+        <dependency>
+            <groupId>io.github.ricardodlm.springai.mcp.common</groupId>
+            <artifactId>common-jwt</artifactId>
+        </dependency>
+
+    </dependencies>
+</project>

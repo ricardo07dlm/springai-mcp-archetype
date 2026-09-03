@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>io.github.ricardodlm.springai.mcp.transport</groupId>
+    <artifactId>transport-architecture-fwk</artifactId>
+    <version>1.0.0</version>
+  </parent>
+  <artifactId>transport-streamable-mvc</artifactId>
+  <version>1.0.0</version>
+  <name>Transport Streamable MVC</name>
+  <description>Librería de transporte Streamable para servidores MCP.
+        Gestiona el ciclo de vida de sesiones y el protocolo streamable HTTP.
+        Agnóstico de autenticación — delega en transport-auth-service via SecurityContextHolder.</description>
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+    </license>
+  </licenses>
+  <dependencies>
+    <dependency>
+      <groupId>io.github.ricardodlm.springai.mcp.transport</groupId>
+      <artifactId>transport-session-service</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.github.ricardodlm.springai.mcp.transport</groupId>
+      <artifactId>transport-auth-service</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.github.ricardodlm.springai.mcp.observability</groupId>
+      <artifactId>observability-logging</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-autoconfigure</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-configuration-processor</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.github.ricardodlm.springai.mcp.common</groupId>
+      <artifactId>common-jwt</artifactId>
+    </dependency>
+  </dependencies>
+</project>
