@@ -14,7 +14,7 @@
     <artifactId>mcp-archetype-installer</artifactId>
     <version>${mcp-archetype-installer.version}</version>
     <packaging>jar</packaging>
-    <name>MCP ARGO Archetype Installer</name>
+    <name>MCP Archetype Installer</name>
     <description>
         Instalador CLI "mvn archetype:generate" para mcp-server-archetype
         con parámetros simplificados: artifactId, dominio, transport, appVersion.
