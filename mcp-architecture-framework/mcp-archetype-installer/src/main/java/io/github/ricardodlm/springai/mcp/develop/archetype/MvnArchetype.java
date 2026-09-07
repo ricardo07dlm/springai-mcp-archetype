@@ -38,7 +38,7 @@ public class MvnArchetype {
             // el package como las properties micro/domain del arquetipo.
             String domainCode = sanitizeForPackage(nombreProyectoOpenShift);
             String microCode = sanitizeForPackage(nombreMicro);
-            String javaPackage = "com.sca.mcp." + domainCode + "." + microCode;
+            String javaPackage = "io.github.ricardodlm.springai.mcp." + domainCode + "." + microCode;
 
             // groupId y package comparten el mismo valor por convención.
             // nombreMicro se pasa como -DmicroName (property obligatoria),

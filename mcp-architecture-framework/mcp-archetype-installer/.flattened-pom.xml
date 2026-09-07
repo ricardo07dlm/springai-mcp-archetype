@@ -9,7 +9,7 @@
   </parent>
   <artifactId>mcp-archetype-installer</artifactId>
   <version>1.0.0</version>
-  <name>MCP ARGO Archetype Installer</name>
+  <name>MCP Archetype Installer</name>
   <description>Instalador CLI "mvn archetype:generate" para mcp-server-archetype
         con parámetros simplificados: artifactId, dominio, transport, appVersion.</description>
   <licenses>
