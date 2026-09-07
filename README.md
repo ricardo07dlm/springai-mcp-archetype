@@ -40,9 +40,10 @@ Entre las capacidades proporcionadas por Keel se incluyen:
 ## Índice
 
 - [<img src="img/keel-icon.svg" height="16" alt=""> Arquitectura de Keel](#arquitectura-de-keel)
-    - [🌱 Spring AI MCP Ecosystem](#spring-ai-mcp-ecosystem)
-    - [📋 Requisitos previos](#requisitos-previos)
-    - [🧰 Stack tecnológico](#stack-tecnológico)
+    - [Visión general de la arquitectura de Keel](#visión-general-de-la-arquitectura-de-Keel)
+    - [Keel en el ecosistema Spring AI MCP](#keel-en-el-ecosistema-Spring-AI-MCP)
+    - [Requisitos del Framework](#requisitos-del-framework)
+    - [Stack tecnológico](#stack-tecnológico)
 - [🧩 Módulos Java de Keel](#módulos-java-de-keel)
 - [🚀 Developer Quickstart & Scaffolding](#developer-quickstart--scaffolding)
     - [🏗️ Generate Scaffolding](#generate-scaffolding)
@@ -58,10 +59,16 @@ Entre las capacidades proporcionadas por Keel se incluyen:
 
 La arquitectura de **Keel** define la estructura técnica sobre la que se construyen los MCP Servers generados a partir del arquetipo. Está organizada por capas y componentes, separando las capacidades funcionales de las capacidades técnicas transversales proporcionadas por Keel.
 
-### 🏗️ Keel Architecture Ecosystem
+### Visión general de la arquitectura de Keel
 
 
-### 🌱 Spring AI MCP Ecosystem
+La arquitectura de **Keel** define la estructura técnica y los componentes sobre los que se construyen los **MCP Servers** generados a partir del proyecto. El modelo combina una **Reference Architecture**, capacidades funcionales y transversales reutilizables, y herramientas de *build & scaffolding* para estandarizar el desarrollo de nuevos servidores MCP.
+El siguiente diagrama muestra la **visión conceptual de Keel**, su relación con **Spring AI** como framework de implementación de MCP y con **MCP (Model Context Protocol)** como protocolo de comunicación, así como el papel de **Maven** como mecanismo de *build* y *scaffolding*.
+
+![Keel Ecosystem](/img/Keel_Ecosystem_Architecture_v1.png)
+
+
+### Keel en el ecosistema Spring AI MCP
 
 El **MCP Server generado a partir de Keel** se construye sobre el stack tecnológico **Java / Spring Boot**, utilizando **Spring AI** como base para la implementación de MCP.
 
@@ -69,7 +76,7 @@ El **MCP Server generado a partir de Keel** se construye sobre el stack tecnoló
 
 
 
-### 🔧 Requisitos del Framework
+### Requisitos del Framework
 
 | 🏷️ **Categoría** | 🔧 **Requisito**      | 📌 **Versión / Detalle** |
 |---|-----------------------|--------------------------|
@@ -78,7 +85,7 @@ El **MCP Server generado a partir de Keel** se construye sobre el stack tecnoló
 | 🔌 **MCP** | Spring AI MCP Server `spring-ai-mcp-server-webmvc` | **2.0.0-M6**             |
 | 📦 **Build** | Maven                 | **Maven 3.9+**           |
 
-### 🧱 Stack tecnológico
+### Stack tecnológico
 
 La arquitectura se apoya en **JDK 25** como runtime base y en **Spring Boot 4.x / Spring Framework 7**, aprovechando el starter oficial `spring-ai-mcp-server`, que permite declarar capacidades MCP de forma nativa mediante anotaciones (`@Tool`, `@Resource`, `@Prompt`), sin necesidad de implementar el protocolo JSON-RPC a bajo nivel.
 
