@@ -1,6 +1,6 @@
 # Keel
 <p align="center">
-  <img src="docs/keel-logo.svg" width="160" alt="Keel">
+  <img src="img/keel-logo.svg" width="160" alt="Keel">
 </p>
 
 > **Reference architecture & Maven Archetype for building MCP servers** · Java 25 · Spring Boot 4
