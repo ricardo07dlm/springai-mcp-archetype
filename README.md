@@ -1,5 +1,5 @@
 <h1>
-<img src="docs/keel-logo.svg" width="180" alt="Keel">
+<img src="img/keel-logo.svg" width="180" alt="Keel">
 </h1>
 
 > **Reference architecture & Maven Archetype for building MCP servers** · Java 25 · Spring Boot 4
@@ -39,7 +39,7 @@ Entre las capacidades proporcionadas por Keel se incluyen:
 ---
 ## Índice
 
-- [<img src="docs/keel-icon.svg" height="16" alt=""> Arquitectura de Keel](#arquitectura-de-keel)
+- [<img src="img/keel-icon.svg" height="16" alt=""> Arquitectura de Keel](#arquitectura-de-keel)
     - [🌱 Spring AI MCP Ecosystem](#spring-ai-mcp-ecosystem)
     - [📋 Requisitos previos](#requisitos-previos)
     - [🧰 Stack tecnológico](#stack-tecnológico)
