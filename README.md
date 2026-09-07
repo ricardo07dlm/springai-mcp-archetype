@@ -1,7 +1,6 @@
-# Keel
-<p align="center">
-  <img src="img/keel-logo.svg" width="160" alt="Keel">
-</p>
+<h1>
+<img src="docs/keel-logo.svg" width="180" alt="Keel">
+</h1>
 
 > **Reference architecture & Maven Archetype for building MCP servers** · Java 25 · Spring Boot 4
 ---
@@ -12,7 +11,7 @@
 ---
 ## Introducción
 
-**Keel** es la *quilla* sobre la que construyes tu servidor MCP (Model Context Protocol): una **arquitectura de referencia modular, estandarizada y organizada por capas**, diseñada para proporcionar una base técnica común para desarrollar servidores MCP sobre **Spring AI**.
+⚓ **Keel** es la *quilla* sobre la que construyes tu servidor MCP (Model Context Protocol): una **arquitectura de referencia modular, estandarizada y organizada por capas**, diseñada para proporcionar una base técnica común para desarrollar servidores MCP sobre **Spring AI**.
 
 > [!IMPORTANT]
 > **Keel no es un wrapper de Spring AI ni un simple generador de proyectos.**
@@ -40,7 +39,7 @@ Entre las capacidades proporcionadas por Keel se incluyen:
 ---
 ## Índice
 
-- [🏗️ Arquitectura de Keel](#arquitectura-de-keel)
+- [<img src="docs/keel-icon.svg" height="16" alt=""> Arquitectura de Keel](#arquitectura-de-keel)
     - [🌱 Spring AI MCP Ecosystem](#spring-ai-mcp-ecosystem)
     - [📋 Requisitos previos](#requisitos-previos)
     - [🧰 Stack tecnológico](#stack-tecnológico)
@@ -55,7 +54,7 @@ Entre las capacidades proporcionadas por Keel se incluyen:
 - [📄 Licencia](#licencia)
 
 ---
-## ️ Arquitectura de Keel
+## <img src="img/keel-icon.svg" height="24" alt=""> Arquitectura de Keel
 
 La arquitectura de **Keel** define la estructura técnica sobre la que se construyen los MCP Servers generados a partir del arquetipo. Está organizada por capas y componentes, separando las capacidades funcionales de las capacidades técnicas transversales proporcionadas por Keel.
 
