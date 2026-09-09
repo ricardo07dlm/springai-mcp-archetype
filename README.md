@@ -1,5 +1,5 @@
 <h1>
-<img src="img/logok_framework_v1.png" width="180" alt="Keel">
+<img src="img/logok_framework.png" width="180" alt="Keel">
 </h1>
 
 > **Reference architecture & Maven Archetype for building MCP servers** · Java 25 · Spring Boot 4
