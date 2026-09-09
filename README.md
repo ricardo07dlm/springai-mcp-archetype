@@ -47,12 +47,10 @@ Entre las capacidades proporcionadas por Keel se incluyen:
   - [Requisitos del Framework](#requisitos-del-framework)
   - [Stack tecnológico](#stack-tecnológico)
   
-  <br>
 - [🧭 Principios de Diseño y Desarrollo](#principios-de-diseño-y-desarrollo)
   - [Introducción](#introducción)
   - [Principios Arquitectónicos](#principios-arquitectónicos)
 
-  <br>
 - [🚀 Quickstart & Scaffolding](#quickstart--scaffolding)
   - [Opción A — Generar un MCP Server mediante el Installer JAR](#opción-a--generar-un-mcp-server-mediante-el-installer-jar)
     - [(1-2) Obtener el Installer JAR](#1-2-obtener-el-installer-jar)
@@ -75,7 +73,6 @@ Entre las capacidades proporcionadas por Keel se incluyen:
     - [`resources/list`](#resourceslist)
     - [`prompts/list`](#promptslist)
   
-  <br>
 - [🏗️ Developer MCP Server — Keel Scaffolding](#developer-mcp-server--keel-scaffolding)
   - [Scaffolding Arquitectónico](#scaffolding-arquitectónico)
   - [Nomenclatura de los Módulos](#nomenclatura-de-los-módulos)
@@ -102,10 +99,8 @@ Entre las capacidades proporcionadas por Keel se incluyen:
     - [`@Resources` — Implementación](#resources--implementación)
     - [Estructura estándar de un Resource (stack Spring AI)](#estructura-estándar-de-un-resource-stack-spring-ai)
 
-
 - [🤝 Contribuir](#contribuir)
 
-  <br>
 - [📄 Licencia](#licencia)
 
 ---
