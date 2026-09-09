@@ -39,7 +39,7 @@ Entre las capacidades proporcionadas por Keel se incluyen:
 ---
 ## Índice
 
-- [<img src="img/keel-icon.svg" height="16" alt=""> Arquitectura de Keel](#arquitectura-de-keel)
+- [<img src="img/keel-icon.svg" height="16" alt=""> **Arquitectura de Keel**](#arquitectura-de-keel)
   - [Visión general](#visión-general)
   - [Keel en el ecosistema Spring AI MCP](#keel-en-el-ecosistema-spring-ai-mcp)
   - [Módulos del Framework](#módulos-del-framework)
@@ -47,11 +47,11 @@ Entre las capacidades proporcionadas por Keel se incluyen:
   - [Requisitos del Framework](#requisitos-del-framework)
   - [Stack tecnológico](#stack-tecnológico)
   
-- [🧭 Principios de Diseño y Desarrollo](#principios-de-diseño-y-desarrollo)
+- [🧭 **Principios de Diseño y Desarrollo**](#principios-de-diseño-y-desarrollo)
   - [Introducción](#introducción)
   - [Principios Arquitectónicos](#principios-arquitectónicos)
 
-- [🚀 Quickstart & Scaffolding](#quickstart--scaffolding)
+- [🚀 **Quickstart & Scaffolding**](#quickstart--scaffolding)
   - [Opción A — Generar un MCP Server mediante el Installer JAR](#opción-a--generar-un-mcp-server-mediante-el-installer-jar)
     - [(1-2) Obtener el Installer JAR](#1-2-obtener-el-installer-jar)
     - [(2-2) Generar el Scaffolding](#2-2-generar-el-scaffolding)
@@ -73,7 +73,7 @@ Entre las capacidades proporcionadas por Keel se incluyen:
     - [`resources/list`](#resourceslist)
     - [`prompts/list`](#promptslist)
   
-- [🏗️ Developer MCP Server — Keel Scaffolding](#developer-mcp-server--keel-scaffolding)
+- [🏗️ **Developer MCP Server — Keel Scaffolding**](#developer-mcp-server--keel-scaffolding)
   - [Scaffolding Arquitectónico](#scaffolding-arquitectónico)
   - [Nomenclatura de los Módulos](#nomenclatura-de-los-módulos)
   - [Componentes del MCP Server Generado por el Archetype de Keel](#componentes-del-mcp-server-generado-por-el-archetype-de-keel)
@@ -99,9 +99,9 @@ Entre las capacidades proporcionadas por Keel se incluyen:
     - [`@Resources` — Implementación](#resources--implementación)
     - [Estructura estándar de un Resource (stack Spring AI)](#estructura-estándar-de-un-resource-stack-spring-ai)
 
-- [🤝 Contribuir](#contribuir)
+- [🤝 **Contribuir**](#contribuir)
 
-- [📄 Licencia](#licencia)
+- [📄 **Licencia**](#licencia)
 
 ---
 ## <img src="img/keel-icon.svg" height="24" alt=""> Arquitectura de Keel
